@@ -28,13 +28,13 @@
 
   color: #252525;
 
-  padding: 15px 30px 15px 50px;
+  padding: 15px 30px 13.5px 50px;
 
   flex: 1;
 
-  &::placeholder {
-    color: #252525;
+  &[type="text"] {
     font-family: "Open Sans", sans-serif;
+    font-weight: 600;
   }
 }
 
