@@ -1,0 +1,80 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.card__image {
+  background: #b8b8b8;
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  height: 180px;
+
+  padding-top: 10px;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+
+  background: var(--black);
+
+  color: var(--white);
+
+  min-height: 150px;
+
+  padding: 10px;
+}
+
+.card__tag {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 15px;
+
+  margin-bottom: 3px;
+}
+
+.card__name {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 110%;
+
+  margin-bottom: 8px;
+}
+
+.card__author {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+.card__footer {
+  margin-top: auto;
+  display: flex;
+}
+
+.button__add {
+  width: 36px;
+  height: 32px;
+
+  border-radius: 6px;
+  border: 1px solid var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+
+  cursor: pointer;
+}
+
+.button__active {
+    background: var(--white);
+}
