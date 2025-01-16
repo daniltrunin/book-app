@@ -1,3 +1,4 @@
+import { FavoritesView } from "./views/favorites/favorites";
 import { MainView } from "./views/main/main";
 
 class App {
@@ -5,6 +6,10 @@ class App {
         {
             path: "",
             view: MainView
+        },
+        {
+            path: "#favorites",
+            view: FavoritesView
         }
     ]
 

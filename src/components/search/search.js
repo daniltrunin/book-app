@@ -18,7 +18,7 @@ export class Search extends DivComponent {
             <div class="search__wrapper">
                 <input 
                     type="text"
-                    placeholder="Найти книгу или автора..."
+                    placeholder="Type to find a book or author"
                     class="search__input"
                     value="${this.state.searchQuery ? this.state.searchQuery : ""}"
                 />
