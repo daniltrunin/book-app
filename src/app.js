@@ -20,6 +20,7 @@ class App {
     constructor() {
         window.addEventListener("hashchange", this.route.bind(this));
         this.route()
+        this.loadStorage()
     }
 
     route() {
@@ -30,17 +31,18 @@ class App {
         this.currentView = new view(this.appState);
         this.currentView.render();
     }
+
+    loadStorage() {
+        const localStorageArray = Object.keys(localStorage);
+        localStorageArray.forEach(item => {
+            const value = localStorage.getItem(item)
+            const json = JSON.parse(value);
+            this.appState.favorites.push(json);
+        })
+    }
 }
 
 new App();
 
-// (function () {
-//     const localStorageArray = Object.keys(localStorage);
-//     localStorageArray.forEach(item => {
-//         console.log(localStorage.getItem(item))
-//     })
-// }())
 
-// setInterval(() => {
-//     console.log(this.appState.favorites)
-// }, 1000)
+
