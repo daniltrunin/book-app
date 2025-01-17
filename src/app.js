@@ -34,3 +34,13 @@ class App {
 
 new App();
 
+// (function () {
+//     const localStorageArray = Object.keys(localStorage);
+//     localStorageArray.forEach(item => {
+//         console.log(localStorage.getItem(item))
+//     })
+// }())
+
+// setInterval(() => {
+//     console.log(this.appState.favorites)
+// }, 1000)

@@ -9,13 +9,15 @@ export class Card extends DivComponent {
     }
 
     #addToFavorites() {
-        this.appState.favorites.push(this.cardState)
+        this.appState.favorites.push(this.cardState);
+        localStorage.setItem(`Book${this.cardState.key}`, JSON.stringify(this.cardState));
     }
 
     #deleteFromFavorites() {
         this.appState.favorites = this.appState.favorites.filter(
             b => b.key !== this.cardState.key
         )
+        localStorage.removeItem(`Book${this.cardState.key}`);
     }
 
     render() {
