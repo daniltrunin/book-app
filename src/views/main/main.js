@@ -40,6 +40,7 @@ export class MainView extends AbstractView {
             this.state.loading = false;
             this.state.numFound = data.numFound;
             this.state.list = data.docs;
+            this.render();
         }
 
         if (path === "list" || path === "loading") {
@@ -48,7 +49,7 @@ export class MainView extends AbstractView {
     }
 
     async loadList(q, offset) {
-        const res = await fetch(`https://openlibrary.org/search.json?q=${q}&offset=${offset}`)
+        const res = await fetch(`https://openlibrary.org/search.json?q=${q}&offset=${offset}&limit=9`)
         return res.json();
     }
 
