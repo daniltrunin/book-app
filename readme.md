@@ -9,6 +9,7 @@
 - Saving books to localStorage (when saving to favorites) and rendering them when restarting the application.
 - Connecting to a third-party API and rendering data from there.
 - Reactive application elements that respond to changes in state.
+- Pagination of found results
 
 ### Technologies used
 
