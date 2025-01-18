@@ -20,6 +20,11 @@ export class Card extends DivComponent {
         localStorage.removeItem(`BookID-${this.cardState.key}`);
     }
 
+    #openDetails() {
+        console.log(this.cardState);
+        // почему-то выводит в консоль все карточки на странице
+    }
+
     render() {
         this.el.classList.add("card");
         const existInFavorites = this.appState.favorites.find(
@@ -51,6 +56,11 @@ export class Card extends DivComponent {
                 </div>
             </div
         `
+
+        document.addEventListener("click", (e) => {
+            if (e.target.closest(".card"))
+                e.target.closest(".card").addEventListener("click", this.#openDetails.bind(this))
+        });
 
         if (existInFavorites) {
             this.el.querySelector("button")
