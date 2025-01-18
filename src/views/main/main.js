@@ -1,6 +1,7 @@
 import onChange from "on-change";
 import { AbstractView } from "../../common/view";
 import { Header } from "../../components/header/header";
+import { Footer } from "../../components/footer/footer";
 import { Search } from "../../components/search/search";
 import { CardList } from "../../components/card-list/card-list";
 
@@ -61,10 +62,18 @@ export class MainView extends AbstractView {
         this.app.innerHTML = "";
         this.app.append(main);
         this.renderHeader();
+        if (this.state.list.length !== 0) {
+            this.renderFooter();
+        }
     }
 
     renderHeader() {
         const header = new Header(this.appState).render();
         this.app.prepend(header);
+    }
+
+    renderFooter() {
+        const footer = new Footer(this.state).render();
+        this.app.append(footer)
     }
 }
