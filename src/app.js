@@ -1,5 +1,6 @@
 import { FavoritesView } from "./views/favorites/favorites";
 import { MainView } from "./views/main/main";
+import { DetailsView } from "./views/details/details";
 
 class App {
     routes = [
@@ -10,6 +11,10 @@ class App {
         {
             path: "#favorites",
             view: FavoritesView
+        },
+        {
+            path: "#details",
+            view: DetailsView
         }
     ]
 

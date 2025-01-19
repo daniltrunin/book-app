@@ -20,8 +20,9 @@ export class Card extends DivComponent {
         localStorage.removeItem(`${this.cardState.key}`);
     }
 
-    #showDetails() {
-        console.log(this.cardState)
+    showDetails() {
+        this.appState.selectedBook = this.cardState;
+        window.location.hash = "#details";
     }
 
     render() {
@@ -42,9 +43,9 @@ export class Card extends DivComponent {
                 <div class="card__tag">
                     ${this.cardState.subject ? this.cardState.subject[0] : "No tags"}
                 </div>
-                <div class="card__name">
+                <a class="card__name">
                     ${this.cardState.title}
-                </div>
+                </a>
                 <div class="card__author">
                     ${this.cardState.author_name ? this.cardState.author_name[0] : "Unknown"}
                 </div>
@@ -59,7 +60,7 @@ export class Card extends DivComponent {
         `
 
         this.el.querySelector(".card__name")
-            .addEventListener("click", this.#showDetails.bind(this));
+            .addEventListener("click", this.showDetails.bind(this));
 
         if (existInFavorites) {
             this.el.querySelector("button")
