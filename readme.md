@@ -4,12 +4,13 @@
 
 ### The project has implemented
 
-- Layout of 4 sections - Header, Search, Found Results, Favorites.
+- Layout of 5 sections - Header, Search, Found Results, Favorites, Details.
 - A self-written framework for creating a SPA, routing, and displaying different views.
 - Saving books to localStorage (when saving to favorites) and rendering them when restarting the application.
 - Connecting to a third-party API and rendering data from there.
 - Reactive application elements that respond to changes in state.
 - Pagination of found results
+- You can open details view by clicking on books name
 
 ### Technologies used
 

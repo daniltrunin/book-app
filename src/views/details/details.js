@@ -20,8 +20,9 @@ export class DetailsView extends AbstractView {
     render() {
         const selectedBook = this.appState.selectedBook
         const detail = document.createElement("div");
+        detail.classList.add("details")
         detail.innerHTML = `
-        <div>
+        <div class="details__book-title">
             ${selectedBook.title}
         </div>`
         detail.append(new Details(this.appState, { list: this.appState.favorites }).render())
