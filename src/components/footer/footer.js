@@ -31,10 +31,10 @@ export class Footer extends DivComponent {
         this.el.innerHTML = `
                 <div class="footer__item footer__item-left">
                     <img src="./././static/arrow_left.svg" />
-                    Предыдущая страница
+                    Previous page
                 </div>
                 <div class="footer__item footer__item-right">
-                    Следующая страница
+                    Next page
                     <img src="./././static/arrow_right.svg" />
                 </div>
         `;

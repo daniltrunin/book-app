@@ -10,23 +10,24 @@ export class Card extends DivComponent {
 
     #addToFavorites() {
         this.appState.favorites.push(this.cardState);
-        localStorage.setItem(`BookID-${this.cardState.key.substring(11)}`, JSON.stringify(this.cardState));
+        localStorage.setItem(`${this.cardState.key}`, JSON.stringify(this.cardState));
     }
 
     #deleteFromFavorites() {
         this.appState.favorites = this.appState.favorites.filter(
             b => b.key !== this.cardState.key
         )
-        localStorage.removeItem(`BookID-${this.cardState.key}`);
+        localStorage.removeItem(`${this.cardState.key}`);
     }
 
-    #openDetails() {
-        console.log(this.cardState);
-        // почему-то выводит в консоль все карточки на странице
+    #showDetails() {
+        console.log(this.cardState)
     }
 
     render() {
         this.el.classList.add("card");
+        this.el.setAttribute("data-key", `${this.cardState.key}`);
+        this.el.setAttribute("title", "Click to open details");
         const existInFavorites = this.appState.favorites.find(
             b => b.key == this.cardState.key
         )
@@ -57,10 +58,8 @@ export class Card extends DivComponent {
             </div
         `
 
-        document.addEventListener("click", (e) => {
-            if (e.target.closest(".card"))
-                e.target.closest(".card").addEventListener("click", this.#openDetails.bind(this))
-        });
+        this.el.querySelector(".card__name")
+            .addEventListener("click", this.#showDetails.bind(this));
 
         if (existInFavorites) {
             this.el.querySelector("button")

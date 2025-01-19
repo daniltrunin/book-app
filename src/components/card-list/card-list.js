@@ -11,7 +11,7 @@ export class CardList extends DivComponent {
 
     render() {
         if (this.parentState.loading) {
-            this.el.innerHTML = `<div class="card-list__loader">Загрузка...</div>`
+            this.el.innerHTML = `<div class="card-list__loader">Loading...</div>`
             return this.el
         }
         const cardGrid = document.createElement("div");

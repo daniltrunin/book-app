@@ -46,6 +46,14 @@
   line-height: 110%;
 
   margin-bottom: 8px;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: var(--white-hover);
+  }
+
+  cursor: pointer;
 }
 
 .card__author {
@@ -76,5 +84,5 @@
 }
 
 .button__active {
-    background: var(--white);
+  background: var(--white);
 }

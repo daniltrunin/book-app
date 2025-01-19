@@ -1,14 +1,17 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
   --black: #121212;
   --white: #fafafa;
+  --white-hover: rgba(255, 255, 255, 0.824);
 }
 
 #root {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
