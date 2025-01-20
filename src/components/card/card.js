@@ -8,12 +8,12 @@ export class Card extends DivComponent {
         this.cardState = cardState;
     }
 
-    #addToFavorites() {
+    addToFavorites() {
         this.appState.favorites.push(this.cardState);
         localStorage.setItem(`${this.cardState.key}`, JSON.stringify(this.cardState));
     }
 
-    #deleteFromFavorites() {
+    deleteFromFavorites() {
         this.appState.favorites = this.appState.favorites.filter(
             b => b.key !== this.cardState.key
         )
@@ -64,10 +64,10 @@ export class Card extends DivComponent {
 
         if (existInFavorites) {
             this.el.querySelector("button")
-                .addEventListener("click", this.#deleteFromFavorites.bind(this))
+                .addEventListener("click", this.deleteFromFavorites.bind(this))
         } else {
             this.el.querySelector("button")
-                .addEventListener("click", this.#addToFavorites.bind(this))
+                .addEventListener("click", this.addToFavorites.bind(this))
         }
 
         return this.el;

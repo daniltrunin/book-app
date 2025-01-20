@@ -23,7 +23,7 @@ export class Details extends DivComponent {
                     <div class="details__material-item">Category: <span>${selectedBook.subject ? selectedBook.subject[0] : "No tags"}</span></div>
                     <div class="details__material-item">First published: <span>${selectedBook.first_publish_year}</span></div>
                     <div class="details__material-item">Amount of pages: <span>${selectedBook.number_of_pages_median}</span></div>
-                    <button class="details__material-btn ">ADD TO FAVORITES</button>
+                    <button class="details__material-btn ">Add to favorites</button>
                 </div>
             </div>
                 <div class="details__tags">
