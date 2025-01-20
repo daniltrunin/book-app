@@ -6,6 +6,19 @@ export class Details extends DivComponent {
         super();
         this.appState = appState;
         this.cardState = cardState;
+        this.selectedBookState = this.appState.selectedBook
+    }
+
+    addToFavorites() {
+        this.appState.favorites.push(this.selectedBookState);
+        localStorage.setItem(`${this.selectedBookState.key}`, JSON.stringify(this.selectedBookState));
+    }
+
+    deleteFromFavorites() {
+        this.appState.favorites = this.appState.favorites.filter(
+            b => b.key !== this.selectedBookState.key
+        )
+        localStorage.removeItem(`${this.selectedBookState.key}`);
     }
 
     render() {
@@ -13,9 +26,11 @@ export class Details extends DivComponent {
         // console.log(selectedBook)
         // console.log(this.appState.favorites)
         this.el.classList.add("details__data");
+
         const existInFavorites = this.appState.favorites.find(
             b => b.key == selectedBook.key
         )
+
         this.el.innerHTML = `
             <div class="details__info">
                 <img
@@ -43,7 +58,13 @@ export class Details extends DivComponent {
                 </div>
         `;
 
-
+        if (existInFavorites) {
+            this.el.querySelector(".details__material-btn")
+                .addEventListener("click", this.deleteFromFavorites.bind(this))
+        } else {
+            this.el.querySelector(".details__material-btn")
+                .addEventListener("click", this.addToFavorites.bind(this))
+        }
 
         return this.el;
     }
