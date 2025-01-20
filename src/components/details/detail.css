@@ -59,6 +59,14 @@
   }
 }
 
+.details__material-btn--active {
+  background-color: #c33030;
+
+  &:hover {
+    background-color: #be4747;
+  }
+}
+
 .details__tags {
   display: flex;
   flex-direction: column;
