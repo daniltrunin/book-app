@@ -21,6 +21,11 @@
   column-gap: 20px;
 }
 
+.details__cover {
+  height: 253px;
+  width: 165px;
+}
+
 .details__material {
   display: flex;
   flex-direction: column;
@@ -82,6 +87,9 @@
 .details__tags-items {
   display: flex;
   column-gap: 10px;
+  row-gap: 10px;
+
+  flex-wrap: wrap;
 }
 
 .details__tags-item {
@@ -93,4 +101,6 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
+
+  flex-shrink: 0;
 }

@@ -33,28 +33,33 @@ export class Details extends DivComponent {
 
         this.el.innerHTML = `
             <div class="details__info">
-                <img
+            ${selectedBook.cover_edition_key
+                ? `<img
                     class="details__cover" 
                     src="https://covers.openlibrary.org/b/olid/${selectedBook.cover_edition_key}-M.jpg"
                     alt="book cover" 
-                />
+                  />`
+                : ""}
                 <div class="details__material">
-                    <div class="details__material-item">Author name: <span>${selectedBook.author_name}</span></div>
+                    <div class="details__material-item">Author name: <span>${selectedBook.author_name ? selectedBook.author_name : "No data"}</span></div>
                     <div class="details__material-item">Category: <span>${selectedBook.subject ? selectedBook.subject[0] : "No tags"}</span></div>
-                    <div class="details__material-item">First published: <span>${selectedBook.first_publish_year}</span></div>
-                    <div class="details__material-item">Amount of pages: <span>${selectedBook.number_of_pages_median}</span></div>
+                    <div class="details__material-item">First published: <span>${selectedBook.first_publish_year ? selectedBook.first_publish_year : "No data"}</span></div>
+                    <div class="details__material-item">Amount of pages: <span>${selectedBook.number_of_pages_median ? selectedBook.number_of_pages_median : "No data   "}</span></div>
                     <button class="details__material-btn ${existInFavorites ? "details__material-btn--active" : ""}">${existInFavorites ? "Remove from favorites" : "Add to favorites"}</button>
                 </div>
             </div>
                 <div class="details__tags">
                     <div class="details__tags-headling">Tags:</div>
                     <div class="details__tags-items">
-                        <div class="details__tags-item">${selectedBook.subject[0]}</div>
-                        <div class="details__tags-item">${selectedBook.subject[1]}</div>
-                        <div class="details__tags-item">${selectedBook.subject[2]}</div>
-                        <div class="details__tags-item">${selectedBook.subject[3]}</div>
-                    </div>
+                    ${selectedBook.subject
+                ? `<div class="details__tags-item">${selectedBook.subject[0]}</div>
+                            <div class="details__tags-item">${selectedBook.subject[1]}</div>
+                            <div class="details__tags-item">${selectedBook.subject[2]}</div>
+                            <div class="details__tags-item">${selectedBook.subject[3]}</div>`
+                : ""
+            }
 
+                    </div>
                 </div>
         `;
 
